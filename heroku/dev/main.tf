@@ -33,35 +33,35 @@ module "company-app-dev" {
 }
 
 // Attach Addons to the Dev App
-module "addon" {
+module "addon-cloudamqp" {
   source = "../modules/addon"
   name   = "cloudamqp"
   plan   = "cloudamqp:tiger"
   app    = "company-private-dev"
 }
 
-module "addon" {
+module "addon-heroku-postgresql" {
   source = "../modules/addon"
   name   = "heroku-postgresql"
   plan   = "heroku-postgresql:standard-2"
   app    = "company-private-dev"
 }
 
-module "addon" {
+module "addon-memcachier" {
   source = "../modules/addon"
   name   = "memcachier"
   plan   = "memcachier:dev"
   app    = "company-private-dev"
 }
 
-module "addon" {
+module "addon-newrelic" {
   source = "../modules/addon"
   name   = "newrelic"
   plan   = "newrelic:wayne"
   app    = "company-private-dev"
 }
 
-module "addon" {
+module "addon-scheduler" {
   source = "../modules/addon"
   name   = "scheduler"
   plan   = "scheduler:standard"
