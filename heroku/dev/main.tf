@@ -3,8 +3,10 @@
 
 // Create Dev Private Space
 module "space" {
-  source = "../modules/space"
-  name   = "company-dev-space"
+  source            = "../modules/space"
+  heroku_space_name = "company-dev-space"
+  heroku_org_name   = "company"
+  region            = "oregon"
 }
 
 // Only allow traffic from the company.com Office Egress
@@ -23,6 +25,7 @@ module "company-app-dev" {
   name        = "company-private-dev"
   space       = "company-dev-space"
   environment = "dev"
+  region      = "oregon"
 
   buildpacks = [
     "https://github.com/DataDog/heroku-buildpack-datadog.git",

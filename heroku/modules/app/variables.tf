@@ -16,3 +16,7 @@ variable "buildpacks" {
   type        = "list"
   description = "A list of buildpacks you want to install with the app"
 }
+
+variable "region" {
+  description = "The region you want to create the app in"
+}
